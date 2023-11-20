@@ -65,7 +65,8 @@ public class signUp extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                FirebaseDatabase.getInstance().getReference("user/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new User(signUpname.getText().toString(), email, password, signUpPhone.getText().toString(), signUpSkill.getText().toString(), ""));
+                                FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(new User(signUpname.getText().toString(), email, password, signUpPhone.getText().toString(), signUpSkill.getText().toString(), sgnUpGender.getText().toString(), signUpDescription.getText().toString(), ""));
                                 Toast.makeText(signUp.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(signUp.this, login.class));
                             } else {

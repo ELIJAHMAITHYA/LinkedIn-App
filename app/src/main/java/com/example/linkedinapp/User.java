@@ -11,11 +11,21 @@ public class User {
     private String description;
 
 
-    public User(String name, String email, String password, String phone_number, String skills, String image) {
+    public User(String name, String email, String password, String phone_number, String skills, String gender,String Description, String image) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone_number = phone_number;
+        this.skills = skills;
+        this.gender = gender;
+        this.description = Description;
+        this.image = image;
+
 
     }
 
-    public User(String name, String email, String password, String phone_number, String gender, String description, String skills, String image) {
+
+    public User(String name, String email, String password, String phone_number, String gender, String description, String skills,String Description, String image) {
         this.name = name;
         this.email = email;
         this.password = password;

@@ -70,8 +70,8 @@
                     android:drawableLeft="@drawable/baseline_email_24"
                     android:drawablePadding="16dp"
                     android:hint="Input Email"
-                    android:padding="16dp"
                     android:maxLines="1"
+                    android:padding="16dp"
                     android:textColor="@color/black" />
 
                 <EditText
@@ -93,15 +93,15 @@
                     android:id="@+id/signup_Password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:maxLines="1"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/custom_edited_background"
                     android:drawableLeft="@drawable/baseline_lock_24"
                     android:drawablePadding="16dp"
-                    android:inputType="textPassword"
                     android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
                     android:padding="16dp"
                     android:textColor="@color/black" />
 
@@ -116,8 +116,8 @@
                     android:drawableLeft="@drawable/baseline_preview_24"
                     android:drawablePadding="16dp"
                     android:hint="Confirm_Password"
-                    android:maxLines="1"
                     android:inputType="textPassword"
+                    android:maxLines="1"
                     android:padding="16dp"
                     android:textColor="@color/black" />
 
@@ -145,6 +145,7 @@
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/description_background"
                     android:hint="Enter your desription......."
+                    android:minHeight="30dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -159,6 +160,7 @@
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/description_background"
                     android:hint="Describe your Skill.........."
+                    android:minHeight="30dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
