@@ -1,10 +1,30 @@
 package com.example.linkedinapp;
 
-public class DataClass {
+public class User {
     private String name;
     private String email;
     private String password;
     private String phone_number;
+    private String skills;
+    private String image;
+    private String gender;
+    private String description;
+
+
+    public User(String name, String email, String password, String phone_number, String skills, String image) {
+
+    }
+
+    public User(String name, String email, String password, String phone_number, String gender, String description, String skills, String image) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone_number = phone_number;
+        this.gender = gender;
+        this.description = description;
+        this.skills = skills;
+        this.image = image;
+    }
 
     public String getName() {
         return name;
@@ -38,21 +58,5 @@ public class DataClass {
         return image;
     }
 
-    private String gender;
-    private String description;
-
-    public DataClass(String name, String email, String password, String phone_number, String gender, String description, String skills, String image) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phone_number = phone_number;
-        this.gender = gender;
-        this.description = description;
-        this.skills = skills;
-        this.image = image;
-    }
-
-    private String skills;
-    private String image;
 
 }

@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signUp extends AppCompatActivity {
     private FirebaseAuth auth;
@@ -48,29 +49,6 @@ public class signUp extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == Activity.RESULT_OK) {
-                            Intent data = result.getData();
-                            Uri uri = data.getData();
-                            signUpimage.setImageURI(uri);
-                        } else {
-                            Toast.makeText(signUp.this, "no image selected", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
-        );
-        signUpimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoPicker = new Intent(Intent.ACTION_PICK);
-                photoPicker.setType("image/*");
-                activityResultLauncher.launch(photoPicker);
-            }
-        });
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +65,7 @@ public class signUp extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                FirebaseDatabase.getInstance().getReference("user/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new User(signUpname.getText().toString(), email, password, signUpPhone.getText().toString(), signUpSkill.getText().toString(), ""));
                                 Toast.makeText(signUp.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(signUp.this, login.class));
                             } else {

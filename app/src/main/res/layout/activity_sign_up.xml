@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/img_1"
     android:gravity="center"
-    tools:context=".signUp">
+    tools:context=".signUp"
+    tools:ignore="MissingClass">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,6 +55,7 @@
                     android:drawableLeft="@drawable/baseline_person_add_alt_1_24"
                     android:drawablePadding="16dp"
                     android:hint="UserName"
+                    android:maxLines="1"
                     android:padding="16dp"
                     android:textColor="@color/black" />
 
@@ -69,6 +71,7 @@
                     android:drawablePadding="16dp"
                     android:hint="Input Email"
                     android:padding="16dp"
+                    android:maxLines="1"
                     android:textColor="@color/black" />
 
                 <EditText
@@ -82,6 +85,7 @@
                     android:drawableLeft="@drawable/baseline_local_phone_24"
                     android:drawablePadding="16dp"
                     android:hint="Phone Number"
+                    android:maxLines="1"
                     android:padding="16dp"
                     android:textColor="@color/black" />
 
@@ -89,12 +93,14 @@
                     android:id="@+id/signup_Password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:maxLines="1"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/custom_edited_background"
                     android:drawableLeft="@drawable/baseline_lock_24"
                     android:drawablePadding="16dp"
+                    android:inputType="textPassword"
                     android:hint="Password"
                     android:padding="16dp"
                     android:textColor="@color/black" />
@@ -110,6 +116,8 @@
                     android:drawableLeft="@drawable/baseline_preview_24"
                     android:drawablePadding="16dp"
                     android:hint="Confirm_Password"
+                    android:maxLines="1"
+                    android:inputType="textPassword"
                     android:padding="16dp"
                     android:textColor="@color/black" />
 
